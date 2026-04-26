@@ -7,6 +7,22 @@
   "deploy": {
     "numReplicas": 1,
     "restartPolicyType": "ON_FAILURE",
-    "restartPolicyMaxRetries": 10
+    "restartPolicyMaxRetries": 10,
+    "healthcheck": {
+      "path": "/health",
+      "interval": 30,
+      "timeout": 10,
+      "retries": 3
+    }
+  },
+  "services": {
+    "ai_chat_app": {
+      "ports": [
+        {
+          "port": 8003,
+          "protocol": "HTTP"
+        }
+      ]
+    }
   }
 }
