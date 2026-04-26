@@ -35,7 +35,7 @@ def startup_event():
 
 @app.get("/")
 def root():
-    return FileResponse("index.html")
+    return {"message": "AI Chat API is running"}
 
 
 @app.get("/health")
